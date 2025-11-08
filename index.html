@@ -65,7 +65,7 @@
         
         <!--================Home Banner Area =================-->
 		
-       <title> CHỖ CHÀO NÈ </title>
+     <title>Hero Section with Animations & Drive Image</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         /* ---------------------------------- */
@@ -74,7 +74,7 @@
         /* Animation cho ảnh: di chuyển nhẹ nhàng */
         @keyframes bounceImage {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); } /* Di chuyển lên 5px */
+            50% { transform: translateY(-5px); }
         }
 
         /* Animation cho chữ: mờ dần và trượt lên */
@@ -83,21 +83,15 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Animation cho từng dòng chữ (tùy chọn, cần JS để kích hoạt) */
-        @keyframes textReveal {
-            from { opacity: 0; transform: translateX(-10px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
         /* ---------------------------------- */
         /* BASE STYLES */
         /* ---------------------------------- */
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            background-color: #f8f9fa; /* Nền trắng xám nhẹ */
+            background-color: #f8f9fa; 
             color: #333;
-            overflow-x: hidden; /* Tránh thanh cuộn ngang không mong muốn */
+            overflow-x: hidden; 
         }
 
         /* ---------------------------------- */
@@ -107,51 +101,51 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 50px; /* Tăng padding để có không gian */
+            padding: 80px 50px; 
             max-width: 1200px;
-            margin: 50px auto; /* Căn giữa và thêm margin trên/dưới */
+            margin: 50px auto; 
             background-color: #ffffff;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Đổ bóng mềm mại hơn */
-            gap: 50px; /* Khoảng cách giữa ảnh và text */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+            gap: 50px; 
 
-            /* Hiệu ứng xuất hiện tổng thể cho section */
+            /* Hiệu ứng xuất hiện tổng thể */
             animation: fadeInSlideUp 1s ease-out forwards;
         }
 
         .hero-image-container {
-            flex-shrink: 0; /* Đảm bảo ảnh không bị co lại */
-            width: 350px; /* Kích thước ảnh */
+            flex-shrink: 0; 
+            width: 350px; 
             height: 350px;
-            border-radius: 50%; /* Làm ảnh tròn */
+            border-radius: 50%; 
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             position: relative;
-            background: linear-gradient(45deg, #a1c4fd, #c2e9fb); /* Màu nền gradient cho viền ảnh */
+            background: linear-gradient(45deg, #a1c4fd, #c2e9fb); 
 
-            /* 🚀 Hiệu ứng ảnh di chuyển khi tải trang */
+            /* 🚀 Hiệu ứng ảnh di chuyển */
             animation: bounceImage 3s infinite ease-in-out;
-            transition: transform 0.3s ease; /* Chuyển động mượt mà khi hover */
+            transition: transform 0.3s ease; 
         }
 
         /* ✨ Hiệu ứng di chuột vào ảnh */
         .hero-image-container:hover {
-            transform: scale(1.03); /* Phóng to nhẹ ảnh */
+            transform: scale(1.03); 
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .hero-image {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Đảm bảo ảnh vừa khung mà không bị méo */
+            object-fit: cover; 
             border-radius: 50%;
             display: block;
         }
 
         .hero-content {
-            flex-grow: 1; /* Cho phép nội dung chiếm phần còn lại */
+            flex-grow: 1; 
             text-align: left;
-            max-width: 600px; /* Giới hạn chiều rộng nội dung */
+            max-width: 600px; 
         }
 
         .hero-content .subtitle {
@@ -159,15 +153,15 @@
             font-weight: 600;
             color: #777;
             margin-bottom: 10px;
-            animation: fadeInSlideUp 0.8s ease-out forwards; /* Xuất hiện */
-            animation-delay: 0.2s; /* Trễ một chút */
-            opacity: 0; /* Mặc định ẩn để animation hiển thị */
+            animation: fadeInSlideUp 0.8s ease-out forwards; 
+            animation-delay: 0.2s; 
+            opacity: 0; 
         }
 
         .hero-content .name {
             font-size: 48px;
             font-weight: 900;
-            color: #2c3e50; /* Màu chữ đậm hơn */
+            color: #2c3e50; 
             margin-bottom: 20px;
             line-height: 1.2;
             animation: fadeInSlideUp 0.8s ease-out forwards; 
@@ -186,7 +180,7 @@
         }
 
         .hero-content strong {
-            color: #e67e22; /* Màu cam nổi bật */
+            color: #e67e22; 
             font-weight: 700;
         }
 
@@ -195,7 +189,7 @@
         /* ---------------------------------- */
         .cta-button {
             display: inline-block;
-            background-color: #3498db; /* Màu xanh dương */
+            background-color: #3498db; 
             color: #ffffff;
             padding: 15px 30px;
             border-radius: 8px;
@@ -215,22 +209,22 @@
 
         /* ✨ Hiệu ứng nút khi di chuột */
         .cta-button:hover {
-            background-color: #2980b9; /* Màu xanh đậm hơn */
-            transform: translateY(-3px); /* Nút nhích lên một chút */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
+            background-color: #2980b9; 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
         }
 
         .cta-button:active {
-            transform: translateY(0); /* Nhấn xuống */
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15) inset; /* Hiệu ứng nhấn */
+            transform: translateY(0); 
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15) inset; 
         }
 
         /* ---------------------------------- */
-        /* RESPONSIVE DESIGN (cho màn hình nhỏ hơn) */
+        /* RESPONSIVE DESIGN */
         /* ---------------------------------- */
         @media (max-width: 992px) {
             .hero-section {
-                flex-direction: column; /* Xếp ảnh và text chồng lên nhau */
+                flex-direction: column; 
                 text-align: center;
                 padding: 50px 30px;
                 gap: 40px;
@@ -244,30 +238,6 @@
             .hero-content .name {
                 font-size: 38px;
             }
-
-            .hero-content p {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-section {
-                padding: 30px 20px;
-            }
-            .hero-image-container {
-                width: 200px;
-                height: 200px;
-            }
-            .hero-content .name {
-                font-size: 32px;
-            }
-            .hero-content p {
-                font-size: 15px;
-            }
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
         }
     </style>
 </head>
@@ -275,7 +245,9 @@
 
     <div class="hero-section">
         <div class="hero-image-container">
-            <img src="https://drive.google.com/file/d/1HzcQV5aN9W_DLpeaA-L88BL9tn-up3EJ/view?usp=drive_link" alt="Nguyễn Hồng Sơn" class="hero-image">
+            
+            <img src="https://drive.google.com/uc?export=view&id=1HzcQV5aN9W_DLpeaA-L88BL9tn-up3EJ" 
+                 alt="Nguyễn Hồng Sơn - Digital Marketer" class="hero-image">
         </div>
         <div class="hero-content">
             <p class="subtitle">This is me</p>
