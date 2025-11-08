@@ -93,44 +93,160 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
         
         <!--================Welcome Area =================-->
         <section class="welcome_area p_120">
-        	<div class="container">
-        		<div class="row welcome_inner">
-        			<div class="col-lg-6">
-        				<div class="welcome_text">
-        					<h4>About Myself</h4>
-👋 Xin chào, tôi là <b>Nguyễn Hồng Sơn</b> – một người đam mê <b>Digital Marketing</b> và sáng tạo nội dung số.<br>
-🎯 <b>Mục tiêu nghề nghiệp:</b> Trở thành <b>Digital Marketer toàn diện</b>, có khả năng kết hợp giữa <b>phân tích dữ liệu</b> và <b>tư duy sáng tạo</b>.<br>
-💡 <b>Thế mạnh:</b><br>
-&nbsp;&nbsp;• Lên ý tưởng và xây dựng <b>chiến dịch truyền thông hiệu quả</b><br>
-&nbsp;&nbsp;• Tạo nội dung hấp dẫn trên các nền tảng <b>Facebook, TikTok, Shopee</b><br>
-&nbsp;&nbsp;• Có tư duy <b>phân tích insight khách hàng</b> và tối ưu quảng cáo<br>
-📊 <b>Định hướng phát triển:</b> Không ngừng học hỏi, cập nhật xu hướng mới về <b>Content Marketing</b>, <b>Performance Ads</b> và <b>Brand Communication</b>.<br>
-🚀 <b>Tầm nhìn cá nhân:</b> Mang lại giá trị thực cho thương hiệu, giúp doanh nghiệp <b>kết nối sâu sắc hơn với khách hàng</b> qua sức mạnh của truyền thông.<br>
-        					<div class="row">
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-database"></i>
-        								<h4>1.1M</h4>
-        								<p>TỔNG LƯỢT THÍCH</p>
-        							</div>
-        						</div>
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-book"></i>
-        								<h4>33.3K</h4>
-        								<p>TỔNG FOLLOWER</p>
-        							</div>
-        						</div>
-        						<div class="col-md-4">
-        							<div class="wel_item">
-        								<i class="lnr lnr-users"></i>
-        								<h4>20</h4>
-        								<p>TỔNG DỰ ÁN</p>
-        							</div>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
+  <title>About Myself Card</title>
+    <style>
+        /* CSS cho About Myself Card */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Màu nền trang web */
+            padding: 20px;
+        }
+
+        .about-myself-card {
+            /* 🎨 Thiết kế Khung ngoài tương tự TOOLS EXPERTNESS */
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bóng rõ hơn một chút */
+            max-width: 600px;
+            margin: 0 auto; /* Căn giữa */
+        }
+
+        .about-myself-heading {
+            /* Tiêu đề chính */
+            font-size: 26px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .about-myself-content p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-size: 15px;
+            color: #555;
+        }
+
+        .about-myself-content strong {
+            /* Màu nổi bật cho từ khóa */
+            color: #e67e22; /* Màu cam đậm */
+            font-weight: 700;
+        }
+
+        .about-myself-content .section-title {
+            /* Tiêu đề nhỏ: Mục tiêu, Thế mạnh... */
+            font-weight: 700;
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        /* 📝 Định dạng danh sách (Thế mạnh) */
+        .about-myself-content ul {
+            list-style: none; 
+            padding-left: 0;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .about-myself-content ul li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .about-myself-content ul li::before {
+            /* Biểu tượng tùy chỉnh */
+            content: "•"; 
+            color: #e67e22; /* Màu cam */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 📊 Phần Thống kê (Stats) */
+        .about-myself-stats {
+            display: flex; 
+            justify-content: space-between; 
+            padding-top: 25px;
+            margin-top: 25px;
+            border-top: 1px solid #f0f0f0; /* Đường kẻ phân cách */
+            gap: 10px;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1; /* Chia đều không gian */
+            padding: 0 5px;
+        }
+
+        .stat-number {
+            font-size: 30px;
+            font-weight: 900;
+            color: #e67e22; /* Màu cam nổi bật */
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #777;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+==========
+    <div class="about-myself-card">
+        <h2 class="about-myself-heading">ABOUT MYSELF</h2>
+
+        <div class="about-myself-content">
+            <p>
+                👋 Xin chào, tôi là <strong>Nguyễn Hồng Sơn</strong> – một người đam mê <strong>Digital Marketing</strong> và sáng tạo nội dung số.
+            </p>
+
+            <p class="section-title">🎯 Mục tiêu nghề nghiệp:</p>
+            <p>Trở thành <strong>Digital Marketer toàn diện</strong>, có khả năng kết hợp giữa phân tích dữ liệu và tư duy sáng tạo.</p>
+
+            <p class="section-title">💡 Thế mạnh:</p>
+            <ul>
+                <li>Lên ý tưởng và xây dựng <strong>chiến dịch truyền thông hiệu quả</strong></li>
+                <li>Tạo nội dung hấp dẫn trên các nền tảng <strong>Facebook, TikTok, Shopee</strong></li>
+                <li>Có tư duy phân tích insight khách hàng và tối ưu quảng cáo</li>
+            </ul>
+
+            <p class="section-title">📈 Định hướng phát triển:</p>
+            <p>Không ngừng học hỏi, cập nhật xu hướng mới về <strong>Content Marketing, Performance Ads</strong> và <strong>Brand Communication</strong>.</p>
+
+            <p class="section-title">🚀 Tầm nhìn cá nhân:</p>
+            <p>Mang lại giá trị thực cho thương hiệu, giúp doanh nghiệp <strong>kết nối sâu sắc hơn với khách hàng</strong> qua sức mạnh của truyền thông.</p>
+        </div>
+
+        <div class="about-myself-stats">
+            <div class="stat-item">
+                <div class="stat-number">1.1M</div>
+                <div class="stat-label">TỔNG LƯỢT THÍCH</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">33.3K</div>
+                <div class="stat-label">TỔNG FOLLOWER</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20</div>
+                <div class="stat-label">TỔNG DỰ ÁN</div>
+            </div>
+        </div>
+    </div>
+
+=====================
+			
         			<title>Tools Expertness - Nguyễn Hồng Sơn</title>
 <style>
   body {
