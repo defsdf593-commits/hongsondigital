@@ -94,27 +94,49 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
         <!--================Welcome Area =================-->
         <section class="welcome_area p_120">
 
-   <title>About Myself Card</title>
+    <title>Two Column Layout</title>
     <style>
-        /* CSS cho About Myself Card */
+        /* ---------------------------------- */
+        /* CẤU TRÚC CHÍNH (MAIN LAYOUT) */
+        /* ---------------------------------- */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9; /* Màu nền trang web */
-            padding: 20px;
+            padding: 40px;
         }
 
-        .about-myself-card {
-            /* 🎨 Thiết kế Khung ngoài tương tự TOOLS EXPERTNESS */
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bóng rõ hơn một chút */
-            max-width: 600px;
+        .main-container {
+            /* 1. Kích hoạt Flexbox cho container */
+            display: flex; 
+            /* 2. Đảm bảo các mục nằm trên cùng một hàng */
+            flex-direction: row; 
+            /* 3. Phân bổ không gian giữa các mục */
+            gap: 30px; 
+            max-width: 1200px;
             margin: 0 auto; /* Căn giữa */
         }
 
-        .about-myself-heading {
-            /* Tiêu đề chính */
+        .card-container {
+            /* Cho phép cả hai bảng chiếm không gian bằng nhau */
+            flex: 1;
+            /* Thiết lập flex cho nội dung bên trong các bảng con */
+            display: flex;
+            flex-direction: column; 
+        }
+
+        /* Định dạng chung cho cả hai bảng */
+        .card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            height: 100%; /* Đảm bảo cả hai card kéo dài hết chiều cao */
+        }
+
+        /* ---------------------------------- */
+        /* BẢNG ABOUT MYSELF (Cột Phải) */
+        /* ---------------------------------- */
+        .about-myself-heading, .tools-heading {
             font-size: 26px;
             font-weight: 800;
             color: #333;
@@ -130,13 +152,11 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
         }
 
         .about-myself-content strong {
-            /* Màu nổi bật cho từ khóa */
-            color: #e67e22; /* Màu cam đậm */
+            color: #e67e22; 
             font-weight: 700;
         }
 
         .about-myself-content .section-title {
-            /* Tiêu đề nhỏ: Mục tiêu, Thế mạnh... */
             font-weight: 700;
             color: #333;
             margin-top: 15px;
@@ -144,7 +164,6 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             font-size: 16px;
         }
         
-        /* 📝 Định dạng danh sách (Thế mạnh) */
         .about-myself-content ul {
             list-style: none; 
             padding-left: 0;
@@ -161,9 +180,8 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
         }
 
         .about-myself-content ul li::before {
-            /* Biểu tượng tùy chỉnh */
             content: "•"; 
-            color: #e67e22; /* Màu cam */
+            color: #e67e22; 
             font-weight: bold;
             display: inline-block;
             width: 1em;
@@ -177,21 +195,21 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             display: flex; 
             justify-content: space-between; 
             padding-top: 25px;
-            margin-top: 25px;
-            border-top: 1px solid #f0f0f0; /* Đường kẻ phân cách */
+            margin-top: auto; /* Đẩy phần stats xuống dưới cùng */
+            border-top: 1px solid #f0f0f0; 
             gap: 10px;
         }
 
         .stat-item {
             text-align: center;
-            flex: 1; /* Chia đều không gian */
+            flex: 1; 
             padding: 0 5px;
         }
 
         .stat-number {
             font-size: 30px;
             font-weight: 900;
-            color: #e67e22; /* Màu cam nổi bật */
+            color: #e67e22; 
             margin-bottom: 5px;
         }
 
@@ -201,52 +219,139 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             font-weight: 600;
             text-transform: uppercase;
         }
+
+        /* 🛠️ BẢNG TOOLS EXPERTNESS (Cột Trái) */
+        .tool-skill {
+            margin-bottom: 15px;
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skill-bar-container {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background-color: #3498db; /* Màu xanh dương cho thanh skill */
+            border-radius: 5px;
+        }
     </style>
-</head>
-<body>
 
-    <div class="about-myself-card">
-        <h2 class="about-myself-heading">ABOUT MYSELF</h2>
+<div class="main-container">
 
-        <div class="about-myself-content">
-            <p>
-                👋 Xin chào, tôi là <strong>Nguyễn Hồng Sơn</strong> – một người đam mê <strong>Digital Marketing</strong> và sáng tạo nội dung số.
-            </p>
-
-            <p class="section-title">🎯 Mục tiêu nghề nghiệp:</p>
-            <p>Trở thành <strong>Digital Marketer toàn diện</strong>, có khả năng kết hợp giữa phân tích dữ liệu và tư duy sáng tạo.</p>
-
-            <p class="section-title">💡 Thế mạnh:</p>
-            <ul>
-                <li>Lên ý tưởng và xây dựng <strong>chiến dịch truyền thông hiệu quả</strong></li>
-                <li>Tạo nội dung hấp dẫn trên các nền tảng <strong>Facebook, TikTok, Shopee</strong></li>
-                <li>Có tư duy phân tích insight khách hàng và tối ưu quảng cáo</li>
-            </ul>
-
-            <p class="section-title">📈 Định hướng phát triển:</p>
-            <p>Không ngừng học hỏi, cập nhật xu hướng mới về <strong>Content Marketing, Performance Ads</strong> và <strong>Brand Communication</strong>.</p>
-
-            <p class="section-title">🚀 Tầm nhìn cá nhân:</p>
-            <p>Mang lại giá trị thực cho thương hiệu, giúp doanh nghiệp <strong>kết nối sâu sắc hơn với khách hàng</strong> qua sức mạnh của truyền thông.</p>
-        </div>
-
-        <div class="about-myself-stats">
-            <div class="stat-item">
-                <div class="stat-number">1.1M</div>
-                <div class="stat-label">TỔNG LƯỢT THÍCH</div>
+    <div class="card-container">
+        <div class="card">
+            <h2 class="tools-heading">TOOLS EXPERTNESS</h2>
+            
+            <div class="tool-skill">
+                <div class="tool-header">
+                    <span>After Effects</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar" style="width: 85%;"></div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">33.3K</div>
-                <div class="stat-label">TỔNG FOLLOWER</div>
+
+            <div class="tool-skill">
+                <div class="tool-header">
+                    <span>Photoshop</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar" style="width: 90%;"></div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">20</div>
-                <div class="stat-label">TỔNG DỰ ÁN</div>
+
+            <div class="tool-skill">
+                <div class="tool-header">
+                    <span>Illustrator</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+
+            <div class="tool-skill">
+                <div class="tool-header">
+                    <span>Sublime</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar" style="width: 95%; background-color: #2ecc71;"></div>
+                </div>
+            </div>
+            
+            <div class="tool-skill">
+                <div class="tool-header">
+                    <span>Sketch</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar-container">
+                    <div class="skill-bar" style="width: 75%;"></div>
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="card-container">
+        <div class="card about-myself-card">
+            <h2 class="about-myself-heading">ABOUT MYSELF</h2>
+
+            <div class="about-myself-content">
+                <p>
+                    👋 Xin chào, tôi là <strong>Nguyễn Hồng Sơn</strong> – một người đam mê <strong>Digital Marketing</strong> và sáng tạo nội dung số.
+                </p>
+
+                <p class="section-title">🎯 Mục tiêu nghề nghiệp:</p>
+                <p>Trở thành <strong>Digital Marketer toàn diện</strong>, có khả năng kết hợp giữa phân tích dữ liệu và tư duy sáng tạo.</p>
+
+                <p class="section-title">💡 Thế mạnh:</p>
+                <ul>
+                    <li>Lên ý tưởng và xây dựng <strong>chiến dịch truyền thông hiệu quả</strong></li>
+                    <li>Tạo nội dung hấp dẫn trên các nền tảng <strong>Facebook, TikTok, Shopee</strong></li>
+                    <li>Có tư duy phân tích insight khách hàng và tối ưu quảng cáo</li>
+                </ul>
+
+                <p class="section-title">📈 Định hướng phát triển:</p>
+                <p>Không ngừng học hỏi, cập nhật xu hướng mới về <strong>Content Marketing, Performance Ads</strong> và <strong>Brand Communication</strong>.</p>
+
+                <p class="section-title">🚀 Tầm nhìn cá nhân:</p>
+                <p>Mang lại giá trị thực cho thương hiệu, giúp doanh nghiệp <strong>kết nối sâu sắc hơn với khách hàng</strong> qua sức mạnh của truyền thông.</p>
+            </div>
+
+            <div class="about-myself-stats">
+                <div class="stat-item">
+                    <div class="stat-number">1.1M</div>
+                    <div class="stat-label">TỔNG LƯỢT THÍCH</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">33.3K</div>
+                    <div class="stat-label">TỔNG FOLLOWER</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">TỔNG DỰ ÁN</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 </body>
+</html>
 			
 <title>Tools Expertness - Nguyễn Hồng Sơn</title>
 <style>
