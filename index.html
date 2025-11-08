@@ -94,47 +94,75 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
         <!--================Welcome Area =================-->
         <section class="welcome_area p_120">
 
-    <title>Two Column Layout</title>
+  <title>Two Column Layout - Animated & Aligned</title>
     <style>
+        /* ---------------------------------- */
+        /* KEYFRAME ANIMATIONS */
+        /* ---------------------------------- */
+        /* Hiệu ứng thanh kỹ năng tải từ trái sang phải */
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: var(--skill-percent); } /* Sử dụng biến CSS */
+        }
+        
+        /* Hiệu ứng mờ dần và trượt lên cho các thẻ (Cards) */
+        @keyframes fadeInSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* ---------------------------------- */
         /* CẤU TRÚC CHÍNH (MAIN LAYOUT) */
         /* ---------------------------------- */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9; /* Màu nền trang web */
+            background-color: #f4f4f9; 
             padding: 40px;
         }
 
         .main-container {
-            /* 1. Kích hoạt Flexbox cho container */
+            /* 1. Đặt hai cột thẳng hàng ngang */
             display: flex; 
-            /* 2. Đảm bảo các mục nằm trên cùng một hàng */
             flex-direction: row; 
-            /* 3. Phân bổ không gian giữa các mục */
             gap: 30px; 
             max-width: 1200px;
-            margin: 0 auto; /* Căn giữa */
+            margin: 0 auto; 
+            /* Đảm bảo container kéo dài theo chiều cao của nội dung dài nhất */
+            align-items: stretch; 
         }
 
         .card-container {
-            /* Cho phép cả hai bảng chiếm không gian bằng nhau */
+            /* 2. Cho phép mỗi cột chiếm không gian bằng nhau (50/50) */
             flex: 1;
-            /* Thiết lập flex cho nội dung bên trong các bảng con */
+            /* Đặt flex cho container để đẩy nội dung bên trong (stats) xuống dưới cùng */
             display: flex;
             flex-direction: column; 
         }
 
-        /* Định dạng chung cho cả hai bảng */
+        /* Định dạng chung cho cả hai bảng (Cards) */
         .card {
             background-color: #ffffff;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-            height: 100%; /* Đảm bảo cả hai card kéo dài hết chiều cao */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+            /* 3. Đảm bảo card kéo dài theo chiều cao của card-container */
+            height: 100%; 
+            
+            /* Hiệu ứng chuyển động và đổ bóng */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            animation: fadeInSlideUp 0.8s ease-out; 
+            /* Thêm overflow ẩn thanh cuộn nếu nội dung quá dài (chỉ nên dùng khi cần) */
+            /* overflow: hidden; */ 
+        }
+
+        /* ✨ Hiệu ứng đổ bóng khi di chuột */
+        .card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
         }
 
         /* ---------------------------------- */
-        /* BẢNG ABOUT MYSELF (Cột Phải) */
+        /* NỘI DUNG VÀ CHI TIẾT */
         /* ---------------------------------- */
         .about-myself-heading, .tools-heading {
             font-size: 26px;
@@ -144,50 +172,9 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             text-transform: uppercase;
         }
 
-        .about-myself-content p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            font-size: 15px;
-            color: #555;
-        }
-
         .about-myself-content strong {
             color: #e67e22; 
             font-weight: 700;
-        }
-
-        .about-myself-content .section-title {
-            font-weight: 700;
-            color: #333;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-        
-        .about-myself-content ul {
-            list-style: none; 
-            padding-left: 0;
-            margin-top: 5px;
-            margin-bottom: 15px;
-        }
-
-        .about-myself-content ul li {
-            margin-bottom: 5px;
-            padding-left: 20px;
-            position: relative;
-            color: #555;
-            line-height: 1.5;
-        }
-
-        .about-myself-content ul li::before {
-            content: "•"; 
-            color: #e67e22; 
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
         }
 
         /* 📊 Phần Thống kê (Stats) */
@@ -195,15 +182,16 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             display: flex; 
             justify-content: space-between; 
             padding-top: 25px;
-            margin-top: auto; /* Đẩy phần stats xuống dưới cùng */
+            /* Đẩy phần stats xuống sát đáy card */
+            margin-top: auto; 
             border-top: 1px solid #f0f0f0; 
             gap: 10px;
         }
-
+        
         .stat-item {
             text-align: center;
             flex: 1; 
-            padding: 0 5px;
+            transition: color 0.3s ease;
         }
 
         .stat-number {
@@ -211,6 +199,11 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             font-weight: 900;
             color: #e67e22; 
             margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .stat-item:hover .stat-number {
+             color: #c0392b; 
         }
 
         .stat-label {
@@ -220,17 +213,9 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             text-transform: uppercase;
         }
 
-        /* 🛠️ BẢNG TOOLS EXPERTNESS (Cột Trái) */
+        /* 🛠️ Thanh Kỹ Năng (Skill Bars) */
         .tool-skill {
-            margin-bottom: 15px;
-        }
-
-        .tool-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #333;
+            margin-bottom: 20px;
         }
 
         .skill-bar-container {
@@ -242,10 +227,34 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
 
         .skill-bar {
             height: 100%;
-            background-color: #3498db; /* Màu xanh dương cho thanh skill */
+            background-color: #3498db; 
             border-radius: 5px;
+            /* 🎬 Áp dụng hiệu ứng tải */
+            animation: fillBar 1.5s ease-out forwards; 
+            --skill-percent: 0;
+            transition: background-color 0.3s ease;
         }
+        
+        .tool-skill:hover .skill-bar {
+            background-color: #2980b9; 
+        }
+
+        /* Thiết lập phần trăm kỹ năng bằng biến CSS và class riêng */
+        .skill-ae { --skill-percent: 85%; }
+        .skill-ps { --skill-percent: 90%; }
+        .skill-ai { --skill-percent: 70%; }
+        .skill-sub { --skill-percent: 95%; background-color: #2ecc71; }
+        .skill-sk { --skill-percent: 75%; }
+        
+        /* Cần thêm CSS cho các mục list để code hoàn chỉnh */
+        .about-myself-content ul {list-style: none; padding-left: 0; margin-top: 5px; margin-bottom: 15px;}
+        .about-myself-content ul li {margin-bottom: 5px; padding-left: 20px; position: relative; color: #555; line-height: 1.5;}
+        .about-myself-content ul li::before {content: "•"; color: #e67e22; font-weight: bold; position: absolute; left: 0;}
+        .about-myself-content p {margin-bottom: 10px; line-height: 1.6; font-size: 15px; color: #555;}
+        .about-myself-content .section-title {font-weight: 700; color: #333; margin-top: 15px; margin-bottom: 5px; font-size: 16px;}
     </style>
+</head>
+<body>
 
 <div class="main-container">
 
@@ -254,53 +263,28 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             <h2 class="tools-heading">TOOLS EXPERTNESS</h2>
             
             <div class="tool-skill">
-                <div class="tool-header">
-                    <span>After Effects</span>
-                    <span>85%</span>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-bar" style="width: 85%;"></div>
-                </div>
+                <div class="tool-header"><span>After Effects</span><span>85%</span></div>
+                <div class="skill-bar-container"><div class="skill-bar skill-ae"></div></div>
             </div>
 
             <div class="tool-skill">
-                <div class="tool-header">
-                    <span>Photoshop</span>
-                    <span>90%</span>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-bar" style="width: 90%;"></div>
-                </div>
+                <div class="tool-header"><span>Photoshop</span><span>90%</span></div>
+                <div class="skill-bar-container"><div class="skill-bar skill-ps"></div></div>
             </div>
 
             <div class="tool-skill">
-                <div class="tool-header">
-                    <span>Illustrator</span>
-                    <span>70%</span>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-bar" style="width: 70%;"></div>
-                </div>
+                <div class="tool-header"><span>Illustrator</span><span>70%</span></div>
+                <div class="skill-bar-container"><div class="skill-bar skill-ai"></div></div>
             </div>
 
             <div class="tool-skill">
-                <div class="tool-header">
-                    <span>Sublime</span>
-                    <span>95%</span>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-bar" style="width: 95%; background-color: #2ecc71;"></div>
-                </div>
+                <div class="tool-header"><span>Sublime</span><span>95%</span></div>
+                <div class="skill-bar-container"><div class="skill-bar skill-sub"></div></div>
             </div>
             
             <div class="tool-skill">
-                <div class="tool-header">
-                    <span>Sketch</span>
-                    <span>75%</span>
-                </div>
-                <div class="skill-bar-container">
-                    <div class="skill-bar" style="width: 75%;"></div>
-                </div>
+                <div class="tool-header"><span>Sketch</span><span>75%</span></div>
+                <div class="skill-bar-container"><div class="skill-bar skill-sk"></div></div>
             </div>
         </div>
     </div>
@@ -310,9 +294,7 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
             <h2 class="about-myself-heading">ABOUT MYSELF</h2>
 
             <div class="about-myself-content">
-                <p>
-                    👋 Xin chào, tôi là <strong>Nguyễn Hồng Sơn</strong> – một người đam mê <strong>Digital Marketing</strong> và sáng tạo nội dung số.
-                </p>
+                <p>👋 Xin chào, tôi là <strong>Nguyễn Hồng Sơn</strong> – một người đam mê <strong>Digital Marketing</strong> và sáng tạo nội dung số.</p>
 
                 <p class="section-title">🎯 Mục tiêu nghề nghiệp:</p>
                 <p>Trở thành <strong>Digital Marketer toàn diện</strong>, có khả năng kết hợp giữa phân tích dữ liệu và tư duy sáng tạo.</p>
@@ -351,75 +333,6 @@ Mục tiêu của tôi là tạo ra những <b>chiến dịch truyền thông</b
 </div>
 
 </body>
-</html>
-			
-<title>Tools Expertness - Nguyễn Hồng Sơn</title>
-<style>
-  body {
-    font-family: "Poppins", sans-serif;
-    background: #f8faff;
-    padding: 40px;
-    color: #222;
-  }
-
-  h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 20px;
-  }
-
-  .skill-container {
-    width: 100%;
-    max-width: 500px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-
-  .skill {
-    margin-bottom: 20px;
-  }
-
-  .skill-name {
-    font-weight: 600;
-    margin-bottom: 5px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .progress-bar {
-    background-color: #eef3ff;
-    border-radius: 20px;
-    height: 12px;
-    overflow: hidden;
-    box-shadow: 0px 0px 8px rgba(90, 135, 255, 0.2);
-  }
-
-  .progress {
-    height: 100%;
-    background: linear-gradient(90deg, #0078ff, #7ab8ff);
-    width: 0;
-    border-radius: 20px;
-    animation: fillBar 2.5s forwards;
-  }
-
-  @keyframes fillBar {
-    from { width: 0; }
-    to { width: var(--progress); }
-  }
-</style>
-</head>
-<body>
-
-								
-							</div>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </section>
         <!--================End Welcome Area =================-->
         
         <!--================Feature Area =================-->
