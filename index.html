@@ -65,7 +65,7 @@
         
         <!--================Home Banner Area =================-->
 		
-     <title>Hero Section with Animations & Drive Image</title>
+    <title>Hero Section with Animations (Fixed Image)</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         /* ---------------------------------- */
@@ -108,38 +108,34 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
             gap: 50px; 
-
-            /* Hiệu ứng xuất hiện tổng thể */
             animation: fadeInSlideUp 1s ease-out forwards;
         }
 
+        /* KHUNG CHỨA ẢNH (Bỏ Border Radius 50% và Background Gradient) */
         .hero-image-container {
             flex-shrink: 0; 
-            width: 350px; 
-            height: 350px;
-            border-radius: 50%; 
+            width: 350px; /* Kích thước ảnh */
+            height: auto; /* Chiều cao tự động theo ảnh */
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             position: relative;
-            background: linear-gradient(45deg, #a1c4fd, #c2e9fb); 
-
+            
             /* 🚀 Hiệu ứng ảnh di chuyển */
             animation: bounceImage 3s infinite ease-in-out;
-            transition: transform 0.3s ease; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
         }
 
         /* ✨ Hiệu ứng di chuột vào ảnh */
         .hero-image-container:hover {
-            transform: scale(1.03); 
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            transform: scale(1.01); /* Phóng to nhẹ ảnh */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .hero-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            border-radius: 50%;
+            height: auto;
             display: block;
+            /* Thêm border radius nhẹ cho ảnh nếu muốn */
+            border-radius: 8px; 
         }
 
         .hero-content {
@@ -200,14 +196,12 @@
             border: none;
             cursor: pointer;
             
-            /* 🚀 Hiệu ứng chuyển động mượt mà */
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
             animation: fadeInSlideUp 0.8s ease-out forwards; 
             animation-delay: 1s; 
             opacity: 0; 
         }
 
-        /* ✨ Hiệu ứng nút khi di chuột */
         .cta-button:hover {
             background-color: #2980b9; 
             transform: translateY(-3px); 
@@ -231,8 +225,8 @@
             }
 
             .hero-image-container {
-                width: 280px;
-                height: 280px;
+                width: 70%; /* Chiếm phần lớn chiều ngang trên mobile */
+                max-width: 350px;
             }
 
             .hero-content .name {
@@ -245,7 +239,6 @@
 
     <div class="hero-section">
         <div class="hero-image-container">
-            
             <img src="https://drive.google.com/uc?export=view&id=1HzcQV5aN9W_DLpeaA-L88BL9tn-up3EJ" 
                  alt="Nguyễn Hồng Sơn - Digital Marketer" class="hero-image">
         </div>
@@ -264,10 +257,6 @@
             <a href="#" class="cta-button">TÌM HIỂU THÊM</a>
         </div>
     </div>
-        <!--================End Home Banner Area =================-->
-        
-        <!--================Welcome Area =================-->
-        <section class="welcome_area p_120">
 
   <title>Two Column Layout - Animated & Aligned</title>
     <style>
