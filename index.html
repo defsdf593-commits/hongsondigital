@@ -1105,51 +1105,109 @@
         <!--================End Projects Area =================-->
         
         <!--================Testimonials Area =================-->
-        <section class="testimonials_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>Testimonials</h2>
-        			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
-        		</div>
-        		<div class="testi_inner">
-					<div class="testi_slider owl-carousel">
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testi_item">
-								<p>As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel across her face</p>
-								<h4>Fanny Spencer</h4>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star"></i></a>
-								<a href="#"><i class="fa fa-star-half-o"></i></a>
-							</div>
-						</div>
-					</div>
-        		</div>
-        	</div>
-        </section>
+   <title>Thư Viện Ảnh Team</title>
+    <style>
+        /* Thiết lập chung cho body */
+        body {
+            background-color: #f5f7f9; /* Nền xám xanh nhẹ nhàng */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
+        }
+
+        /* Container chứa 4 ảnh */
+        .photo-gallery {
+            display: flex;
+            gap: 30px; /* Khoảng cách giữa các ảnh */
+            padding: 40px;
+            background-color: #ffffff; /* Nền trắng */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Khung cho từng ảnh (Team Member Card) */
+        .photo-item {
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            /* Thiết lập VIỀN XUNG QUANH */
+            border: 2px solid #007bff; /* Viền màu xanh dương nổi bật */
+            padding: 15px;
+            width: 200px; /* Chiều rộng cố định cho khung */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hiệu ứng di chuột (hover effect) */
+        .photo-item:hover {
+            transform: translateY(-5px); /* Nâng nhẹ */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Đổ bóng mạnh hơn */
+            border-color: #0056b3; /* Đổi màu viền khi hover */
+        }
+
+        /* Định dạng thẻ ảnh */
+        .photo-item img {
+            width: 100%; /* Ảnh full width trong khung */
+            height: 250px; /* Chiều cao cố định */
+            object-fit: cover;
+            border-radius: 6px; /* Bo tròn góc ảnh */
+            margin-bottom: 15px;
+            /* Tạo viền mờ cho ảnh bên trong */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Định dạng tên (caption) */
+        .name {
+            font-size: 1.15em;
+            font-weight: 700; /* Rất đậm */
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        /* Định dạng chức vụ (position) */
+        .position {
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #6c757d; /* Màu xám tối */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="photo-gallery">
+        <div class="photo-item">
+            <img src="img/banner/anh1.PNG">
+            <div class="name">Nguyễn Văn A</div>
+            <div class="position">Trưởng Nhóm Phát Triển</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="img/banner/anh3.PNG" alt="Thành viên 2">
+            <div class="name">Lê Thị B</div>
+            <div class="position">Chuyên Viên Thiết Kế</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="img/banner/ảnh2.PNG" alt="Thành viên 3">
+            <div class="name">Trần Văn C</div>
+            <div class="position">Quản Lý Dự Án</div>
+        </div>
+
+        <div class="photo-item">
+            <img src="img/banner/ảnh3.PNG" alt="Thành viên 4">
+            <div class="name">Phạm Thị D</div>
+            <div class="position">Marketing Chiến Lược</div>
+        </div>
+    </div>
+
+</body>
         <!--================End Testimonials Area =================-->
         
         <!--================Latest Blog Area =================-->
