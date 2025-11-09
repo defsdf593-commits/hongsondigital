@@ -595,57 +595,199 @@
 </head>
 <body>
 
-<div class="marketing-offerings-section">
+
+	
+    <title>Dự Án Đã Hoàn Thành (Cuộn Ngang)</title>
+    <style>
+        /* CSS CƠ BẢN VÀ ĐỊNH DẠNG CHUNG */
+        .projects-section {
+            padding: 80px 20px;
+            background-color: #f8f8fb; /* Nền màu nhạt tương tự hình ảnh */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Tiêu đề và Mô tả */
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800; /* Rất đậm */
+            color: #333;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        /* Danh mục phân loại (Categories) */
+        .project-categories {
+            margin-bottom: 40px;
+        }
+
+        .project-categories a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .project-categories a:hover {
+            color: #007bff; /* Màu xanh khi rê chuột */
+        }
+        
+        .project-categories .active {
+            color: #007bff; /* Màu xanh cho danh mục đang hoạt động */
+            font-weight: bold;
+        }
+
+        /* --- PHẦN CUỘN NGANG (HORIZONTAL SCROLL) --- */
+        .horizontal-scroll-container {
+            /* Giữ cho nội dung cuộn không bị tràn ra ngoài */
+            max-width: 1200px; 
+            margin: 0 auto;
+            overflow-x: scroll; /* BẬT TÍNH NĂNG CUỘN NGANG */
+            padding-bottom: 20px; /* Thêm padding để không che thanh cuộn */
+            -webkit-overflow-scrolling: touch; /* Tăng tốc độ cuộn trên iOS */
+        }
+
+        /* Tùy chỉnh thanh cuộn (Chỉ áp dụng cho Webkit - Chrome, Safari) */
+        .horizontal-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-track {
+            background: #eee;
+        }
+
+        .project-list {
+            display: flex; /* Dùng Flexbox để xếp các item theo chiều ngang */
+            gap: 20px; /* Khoảng cách giữa các ảnh */
+            padding: 0 5px; /* Padding nhẹ ở hai đầu */
+            /* Đảm bảo chiều rộng đủ lớn để cuộn */
+            width: fit-content; 
+        }
+
+        /* Định dạng từng dự án */
+        .project-item {
+            /* Kích thước ảnh cố định để tạo hiệu ứng cuộn */
+            flex: 0 0 300px; 
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px; /* Chiều cao cố định cho ảnh */
+            object-fit: cover; /* Đảm bảo ảnh che phủ hết khung */
+            display: block;
+        }
+
+        /* Thông tin mô tả bên dưới ảnh */
+        .project-info {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .project-info h4 {
+            font-size: 17px;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .project-info p {
+            font-size: 14px;
+            color: #007bff; /* Màu xanh cho danh mục */
+        }
+
+        /* Responsive - Đảm bảo cuộn tốt trên di động */
+        @media (max-width: 600px) {
+            .projects-section {
+                padding: 50px 10px;
+            }
+            .project-item {
+                flex: 0 0 80vw; /* Chiếm 80% chiều rộng viewport trên di động */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="projects-section">
     <div class="section-header">
-        <h2>CÁC CHIẾN DỊCH & DỊCH VỤ MARKETING NỔI BẬT</h2>
-        <p>Tôi cung cấp các giải pháp tiếp thị kỹ thuật số toàn diện, tập trung vào kết quả và hiệu quả chi phí. Hãy xem các lĩnh vực chuyên môn của tôi:</p>
+        <h2>DỰ ÁN ĐÃ HOÀN THÀNH GẦN ĐÂY CỦA CHÚNG TÔI</h2>
+        <p>Tuyển chọn các dự án tiêu biểu nhất trong các lĩnh vực thiết kế và marketing.</p>
     </div>
 
-    <div class="services-grid">
-        
-        <div class="service-box">
-            <h3>Tối Ưu Hóa SEO (Search Engine Optimization)</h3>
-            <p>
-                Triển khai chiến lược nội dung và kỹ thuật để cải thiện thứ hạng tự nhiên trên Google. Tăng trưởng lưu lượng truy cập không trả tiền và định vị thương hiệu.
-            </p>
-        </div>
-        
-        <div class="service-box">
-            <h3>Quảng Cáo Trả Phí (Google Ads & Facebook Ads)</h3>
-            <p>
-                Quản lý ngân sách hiệu quả, tối ưu hóa tỷ lệ chuyển đổi (ROAS). Chạy các chiến dịch tìm kiếm, hiển thị, video và xã hội nhắm đúng đối tượng mục tiêu.
-            </p>
-        </div>
-        
-        <div class="service-box">
-            <h3>Marketing Nội Dung & Sáng Tạo</h3>
-            <p>
-                Xây dựng hành trình nội dung (Content Journey) từ nhận thức đến quyết định mua. Sáng tạo Blog, Ebook, Kịch bản Video chất lượng cao, thu hút khách hàng.
-            </p>
-        </div>
-        
-        <div class="service-box">
-            <h3>Quản Lý Truyền Thông Xã Hội</h3>
-            <p>
-                Phát triển chiến lược đa nền tảng (Facebook, Instagram, TikTok). Tăng cường tương tác, xây dựng cộng đồng và biến người theo dõi thành khách hàng tiềm năng.
-            </p>
-        </div>
-
-        <div class="service-box">
-            <h3>Email Marketing Tự Động Hóa</h3>
-            <p>
-                Thiết lập chuỗi Email nuôi dưỡng khách hàng (Lead Nurturing) và chiến dịch Email bán hàng. Tăng tỷ lệ mở và tỷ lệ nhấp chuột qua cá nhân hóa.
-            </p>
-        </div>
-        
-        <div class="service-box">
-            <h3>Phân Tích Dữ Liệu & Báo Cáo</h3>
-            <p>
-                Theo dõi hiệu suất chiến dịch qua Google Analytics và các công cụ khác. Cung cấp báo cáo chuyên sâu để đưa ra quyết định dựa trên dữ liệu (Data-Driven Decisions).
-            </p>
-        </div>
-        
+    <div class="project-categories">
+        <a href="#" class="active">Tất Cả</a>
+        <a href="#">Thương Hiệu (Branding)</a>
+        <a href="#">Sáng Tạo (Creative Work)</a>
+        <a href="#">Thiết Kế Web (Web Design)</a>
+        <a href="#">Chiến Dịch Marketing</a>
     </div>
+
+    <div class="horizontal-scroll-container">
+        <div class="project-list">
+            
+            <div class="project-item">
+                <img src="img/banner/Captgdgure.PNG">
+                <div class="project-info">
+                    <h4> Xây dựng kênh TikTok </h4>
+                    <p>Web Design</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="img/banner/4fdd1f177293581.Y3JvcCwxODIwLDE0MjQsMTEyLDA.jpg">
+                <div class="project-info">
+                    <h4>Bộ Nhận Diện Thương Hiệu</h4>
+                    <p>Branding</p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <img src="img/banner/1000_F_478396162_2AeU94tJSzkmPbdBQvYXWyyh9JyhTZOE.jpg" alt="Ảnh Dự Án 3">
+                <div class="project-info">
+                    <h4>Chiến Dịch Tăng Trưởng SEO</h4>
+                    <p>Creative Work</p>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <img src="img/banner/02c60b6d-310a-4398-91e6-540a1a4056f5.jpg" alt="Ảnh Dự Án 4">
+                <div class="project-info">
+                    <h4>Quảng Cáo Mạng Xã Hội</h4>
+                    <p>Marketing</p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <img src="img/banner/02c60b6d-310a-4398-91e6-540a1a4056f5.jpg" alt="Ảnh Dự Án 5">
+                <div class="project-info">
+                    <h4>Tối Ưu Landing Page</h4>
+                    <p>Web Design</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
 </div>
 
 </body>
