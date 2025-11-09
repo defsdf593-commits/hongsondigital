@@ -505,58 +505,150 @@
         <!--================End Welcome Area =================-->
         
         <!--================Feature Area =================-->
-        <section class="feature_area p_120">
-        	<div class="container">
-        		<div class="main_title">
-        			<h2>offerings to my clients</h2>
-        			<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
-        		</div>
-        		<div class="feature_inner row">
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-city"></i>
-        					<h4>Architecture</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-skyline"></i>
-        					<h4>Interior Design</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-sketch"></i>
-        					<h4>Concept Design</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-city"></i>
-        					<h4>Architecture</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-skyline"></i>
-        					<h4>Interior Design</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        			<div class="col-lg-4 col-md-6">
-        				<div class="feature_item">
-        					<i class="flaticon-sketch"></i>
-        					<h4>Concept Design</h4>
-        					<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.</p>
-        				</div>
-        			</div>
-        		</div>
-        	</div>
-        </section>
+    <title>Portfolio Digital Marketer</title>
+    <style>
+        /* CSS GỐC CHO NỘI DUNG DIGITAL MARKETING */
+        
+        .marketing-offerings-section {
+            padding: 60px 20px;
+            background-color: #f8f8f8; /* Màu nền nhẹ */
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Khung chứa các dịch vụ */
+        .services-grid {
+            display: grid;
+            /* Tạo lưới 3 cột đều nhau */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 25px; /* Khoảng cách giữa các ô */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Định dạng từng ô dịch vụ (mô phỏng ô chữ nhật trên hình) */
+        .service-box {
+            background-color: #ffffff; /* Nền trắng */
+            padding: 30px;
+            text-align: left;
+            border-radius: 4px; /* Bo góc nhẹ */
+            min-height: 250px; /* Chiều cao tối thiểu */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px); /* Hiệu ứng nâng lên khi hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-box h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff; /* Màu nhấn cho tiêu đề */
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .service-box p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Tối ưu hóa cho thiết bị di động (Responsive) */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 cột trên máy tính bảng */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr; /* 1 cột trên điện thoại */
+                gap: 20px;
+            }
+            .marketing-offerings-section {
+                padding: 40px 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="marketing-offerings-section">
+    <div class="section-header">
+        <h2>CÁC CHIẾN DỊCH & DỊCH VỤ MARKETING NỔI BẬT</h2>
+        <p>Tôi cung cấp các giải pháp tiếp thị kỹ thuật số toàn diện, tập trung vào kết quả và hiệu quả chi phí. Hãy xem các lĩnh vực chuyên môn của tôi:</p>
+    </div>
+
+    <div class="services-grid">
+        
+        <div class="service-box">
+            <h3>Tối Ưu Hóa SEO (Search Engine Optimization)</h3>
+            <p>
+                Triển khai chiến lược nội dung và kỹ thuật để cải thiện thứ hạng tự nhiên trên Google. Tăng trưởng lưu lượng truy cập không trả tiền và định vị thương hiệu.
+            </p>
+        </div>
+        
+        <div class="service-box">
+            <h3>Quảng Cáo Trả Phí (Google Ads & Facebook Ads)</h3>
+            <p>
+                Quản lý ngân sách hiệu quả, tối ưu hóa tỷ lệ chuyển đổi (ROAS). Chạy các chiến dịch tìm kiếm, hiển thị, video và xã hội nhắm đúng đối tượng mục tiêu.
+            </p>
+        </div>
+        
+        <div class="service-box">
+            <h3>Marketing Nội Dung & Sáng Tạo</h3>
+            <p>
+                Xây dựng hành trình nội dung (Content Journey) từ nhận thức đến quyết định mua. Sáng tạo Blog, Ebook, Kịch bản Video chất lượng cao, thu hút khách hàng.
+            </p>
+        </div>
+        
+        <div class="service-box">
+            <h3>Quản Lý Truyền Thông Xã Hội</h3>
+            <p>
+                Phát triển chiến lược đa nền tảng (Facebook, Instagram, TikTok). Tăng cường tương tác, xây dựng cộng đồng và biến người theo dõi thành khách hàng tiềm năng.
+            </p>
+        </div>
+
+        <div class="service-box">
+            <h3>Email Marketing Tự Động Hóa</h3>
+            <p>
+                Thiết lập chuỗi Email nuôi dưỡng khách hàng (Lead Nurturing) và chiến dịch Email bán hàng. Tăng tỷ lệ mở và tỷ lệ nhấp chuột qua cá nhân hóa.
+            </p>
+        </div>
+        
+        <div class="service-box">
+            <h3>Phân Tích Dữ Liệu & Báo Cáo</h3>
+            <p>
+                Theo dõi hiệu suất chiến dịch qua Google Analytics và các công cụ khác. Cung cấp báo cáo chuyên sâu để đưa ra quyết định dựa trên dữ liệu (Data-Driven Decisions).
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+</body>
         <!--================End Feature Area =================-->
         
         <!--================Projects Area =================-->
