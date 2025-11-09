@@ -595,7 +595,7 @@
 </head>
 <body>
 
-
+  <!--================ SHOW ẢNH =================-->
 	
     <title>Dự Án Đã Hoàn Thành (Cuộn Ngang)</title>
     <style>
@@ -727,6 +727,196 @@
     </style>
 </head>
 <body>
+  <!--================SHOW ẢNH =================-->
+<title>Dự Án Đã Hoàn Thành (Cuộn Ngang)</title>
+    <style>
+        /* ==================================== */
+        /* CSS CƠ BẢN VÀ ĐỊNH DẠNG SECTION */
+        /* ==================================== */
+        .projects-section {
+            padding: 80px 20px;
+            background-color: #f8f8fb;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Tiêu đề và Mô tả */
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        /* Danh mục phân loại (Categories) */
+        .project-categories {
+            margin-bottom: 40px;
+        }
+
+        .project-categories a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .project-categories a:hover {
+            color: #007bff; /* Màu xanh khi rê chuột */
+        }
+        
+        .project-categories .active {
+            color: #007bff; /* Màu xanh cho danh mục đang hoạt động */
+            font-weight: bold;
+        }
+
+        /* --- PHẦN CUỘN NGANG (HORIZONTAL SCROLL) --- */
+        .horizontal-scroll-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: scroll; /* BẬT TÍNH NĂNG CUỘN NGANG */
+            padding-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Tùy chỉnh thanh cuộn (Webkit) */
+        .horizontal-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        .horizontal-scroll-container::-webkit-scrollbar-track {
+            background: #eee;
+        }
+
+        .project-list {
+            display: flex; /* Xếp các item theo chiều ngang */
+            gap: 20px;
+            padding: 0 5px;
+            width: fit-content;
+        }
+
+        /* Định dạng từng dự án */
+        .project-item {
+            flex: 0 0 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Thêm con trỏ để báo hiệu có thể click */
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Thông tin mô tả bên dưới ảnh */
+        .project-info {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .project-info h4 {
+            font-size: 17px;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .project-info p {
+            font-size: 14px;
+            color: #007bff;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .projects-section {
+                padding: 50px 10px;
+            }
+            .project-item {
+                flex: 0 0 80vw;
+            }
+        }
+        
+        /* ==================================== */
+        /* CSS PHÓNG TO ẢNH (MODAL/LIGHTBOX) */
+        /* ==================================== */
+        .modal {
+            display: none; /* Ban đầu ẩn modal */
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9); /* Nền đen mờ */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        /* Nút đóng (X) */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+        }
+
+        /* Chú thích ảnh */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+
+        /* Hiệu ứng phóng to */
+        @keyframes zoom {
+            from {transform: scale(0.1)} 
+            to {transform: scale(1)}
+        }
+    </style>
+</head>
+<body>
 
 <div class="projects-section">
     <div class="section-header">
@@ -746,15 +936,15 @@
         <div class="project-list">
             
             <div class="project-item">
-                <img src="img/banner/Captgdgure.PNG">
+                <img src="img/banner/Captgdgure.PNG" alt="Ảnh Xây dựng kênh TikTok">
                 <div class="project-info">
-                    <h4> Xây dựng kênh TikTok </h4>
-                    <p>Web Design</p>
+                    <h4>Xây dựng kênh TikTok</h4>
+                    <p>Creative Work</p>
                 </div>
             </div>
 
             <div class="project-item">
-                <img src="img/banner/4fdd1f177293581.Y3JvcCwxODIwLDE0MjQsMTEyLDA.jpg">
+                <img src="img/banner/4fdd1f177293581.Y3JvcCwxODIwLDE0MjQsMTEyLDA.jpg" alt="Ảnh Bộ Nhận Diện Thương Hiệu">
                 <div class="project-info">
                     <h4>Bộ Nhận Diện Thương Hiệu</h4>
                     <p>Branding</p>
@@ -762,15 +952,15 @@
             </div>
             
             <div class="project-item">
-                <img src="img/banner/1000_F_478396162_2AeU94tJSzkmPbdBQvYXWyyh9JyhTZOE.jpg" alt="Ảnh Dự Án 3">
+                <img src="img/banner/1000_F_478396162_2AeU94tJSzkmPbdBQvYXWyyh9JyhTZOE.jpg" alt="Ảnh Chiến Dịch Tăng Trưởng SEO">
                 <div class="project-info">
                     <h4>Chiến Dịch Tăng Trưởng SEO</h4>
-                    <p>Creative Work</p>
+                    <p>Marketing</p>
                 </div>
             </div>
 
             <div class="project-item">
-                <img src="img/banner/02c60b6d-310a-4398-91e6-540a1a4056f5.jpg" alt="Ảnh Dự Án 4">
+                <img src="img/banner/02c60b6d-310a-4398-91e6-540a1a4056f5.jpg" alt="Ảnh Quảng Cáo Mạng Xã Hội">
                 <div class="project-info">
                     <h4>Quảng Cáo Mạng Xã Hội</h4>
                     <p>Marketing</p>
@@ -778,7 +968,7 @@
             </div>
             
             <div class="project-item">
-                <img src="img/banner/tenmien.PNG" alt="Ảnh Dự Án 5">
+                <img src="img/banner/tenmien.PNG" alt="Ảnh Tối Ưu Landing Page">
                 <div class="project-info">
                     <h4>Tối Ưu Landing Page</h4>
                     <p>Web Design</p>
@@ -789,6 +979,52 @@
     </div>
 
 </div>
+
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<script>
+    // Lấy các phần tử cần thiết
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    
+    // Lấy tất cả ảnh dự án trong danh sách cuộn ngang
+    var projectImages = document.querySelectorAll('.project-item img');
+
+    // Lặp qua từng ảnh để thêm sự kiện nhấp chuột
+    projectImages.forEach(function(img) {
+        img.onclick = function(){
+            openModal(this);
+        }
+    });
+
+    // Hàm mở Modal và hiển thị ảnh
+    function openModal(imgElement) {
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+        
+        // Lấy tên dự án từ thẻ <h4> liền kề để làm chú thích
+        var projectItem = imgElement.closest('.project-item');
+        var title = projectItem.querySelector('h4') ? projectItem.querySelector('h4').innerText : imgElement.alt;
+        captionText.innerHTML = title;
+    }
+
+    // Hàm đóng Modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Đóng Modal khi nhấp chuột ra ngoài ảnh (trên nền đen)
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 
 </body>
         <!--================End Feature Area =================-->
